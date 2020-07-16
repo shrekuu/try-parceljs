@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='keywords' content='' />
+    <meta name='description' content='' />
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <meta name='format-detection' content='telephone=no'>
+    <meta name='format-detection' content='date=no'>
+    <meta name='format-detection' content='address=no'>
+    <meta name='format-detection' content='email=no'>
+    <meta name='viewport'
+          content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+
+    <!-- 360浏览器 6.5+ 使用 webkit 引擎渲染 -->
+    <meta name='renderer' content='webkit'>
+
+    <title>
+        <block name='title'>智利旅游局官网</block>
+    </title>
+
+    <link rel='apple-touch-icon' sizes='180x180' href='/assets/static/favicon/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='/assets/static/favicon/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='/assets/static/favicon/favicon-16x16.png'>
+    <link rel='manifest' href='/assets/static/favicon/site.webmanifest'>
+
+    <!-- 修改 html 根节点字体大小, 移动端 与 PC 端根据 UI 稿分别等比缩放 -->
+    <script>
+      (function () {
+        const setHtmlRootFontSize = function () {
+
+          // 0 <= screenWidth < 1024 移动端等比缩略
+          // 1024 <= screenWidth < 1680 PC端等比缩略
+          // 1680 <= screenWidth PC端不等比缩略
+          if (window.innerWidth < 1024) {
+            document.querySelector('html').style.fontSize = window.innerWidth / 750 * 100 + 'px'
+          } else if (window.innerWidth < 1680) {
+            document.querySelector('html').style.fontSize = window.innerWidth / 1680 * 100 + 'px'
+          } else {
+            document.querySelector('html').style.fontSize = '100px'
+          }
+        }
+
+        setHtmlRootFontSize()
+
+        // 窗口缩放就重算
+        window.addEventListener('resize', setHtmlRootFontSize)
+      })()
+    </script>
+
+    <!-- global vendor styles -->
+    <link rel='stylesheet' href='/assets/static/fontawesome/css/all.min.css'>
+    <link rel='stylesheet' href='/assets/static/swiperjs/swiper-bundle.min.css'>
+    <link rel='stylesheet' href='/assets/static/videojs/videojs.min.css'>
+
+    <!-- global styles -->
+    <link rel='stylesheet' href='../assets/scss/app.scss'>
+
+
+    <!-- view styles  -->
+    <block name='styles'></block>
+
+</head>
+
+<body>
+
+
+<!-- view content -->
+<div class='content'>
+    <block name='content'></block>
+</div>
+
+
+<!-- global vendor scripts -->
+<script src='/assets/static/jquery-3.5.1.slim.min.js'></script>
+<script src='/assets/static/swiperjs/swiper-bundle.min.js'></script>
+<script src='/assets/static/videojs/videojs.min.js'></script>
+<script src='../assets/js/app.js'></script>
+
+<!-- view scripts -->
+<block name='scripts'></block>
+
+<script>
+  // 少量全局 js
+  // 注意这里无转译过程, 不要写新语法
+  (function () {
+
+    // cloak, 防止 FOUC
+    setTimeout(function () {
+      $('.cloak').removeClass('cloak')
+    }, 1) // 不要设置为 0, 原因忘了
+
+  })()
+</script>
+
+</body>
+
+</html>

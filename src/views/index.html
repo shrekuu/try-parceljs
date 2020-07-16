@@ -1,0 +1,28 @@
+<extends src="app.html">
+
+  <block name='styles'>
+    <link rel="stylesheet" href="../assets/scss/index.scss">
+  </block>
+
+  <block name="content">
+
+    <div class="cat-bg" style="background-image: url(../assets/images/placeholders/cat.jpg);" alt="cat"></div>
+
+    <div class="cat-image"><img class="img-responsive" src="../assets/images/placeholders/cat.jpg"></div>
+
+    <if condition="env === 'dev'">
+      <div class="app-env-tag app-env-dev">测试环境</div>
+      </else>
+      <div class="app-env-tag app-env-prod">生产环境</div>
+    </if>
+
+    <div><a href="/test">test page</a></div>
+
+  </block>
+
+
+  <block name='scripts'>
+    <script src="../assets/js/index.js"></script>
+  </block>
+
+</extends>

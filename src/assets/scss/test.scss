@@ -1,0 +1,19 @@
+@import './includes/variables';
+
+.dog-bg {
+    border: 1px solid blue;
+    width: 100px;
+    height: 100px;
+    background: transparent url(../images/placeholders/dog.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.dog-image {
+    width: 100px;
+    height: 100px;
+}
+
+a {
+    color: $color-secondary;
+}
+

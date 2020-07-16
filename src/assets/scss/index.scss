@@ -1,0 +1,19 @@
+@import './includes/variables';
+
+.cat-bg {
+    border: 1px solid blue;
+    width: 100px;
+    height: 100px;
+    background: transparent url(../images/placeholders/cat.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.cat-image {
+    width: 100px;
+    height: 100px;
+}
+
+a {
+    color: $color-primary;
+}
+

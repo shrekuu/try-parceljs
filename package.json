@@ -1,0 +1,85 @@
+{
+  "name": "wordpress-site",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "parcel serve ./src/views/**/*.html",
+    "dev": "npm run serve",
+    "watch": "npm run serve",
+    "build": "parcel build ./src/views/**/*.html --public-url /wp-content/themes/dt-hellola/webs/assets",
+    "deploy": "NODE_ENV=production parcel build ./src/views/**/*.html && node ./deploy.js",
+    "clean": "rimraf ./dist .cache .parcel-cache"
+  },
+  "customDistStructure": {
+    "config": {
+      "views": [
+        ".html"
+      ],
+      "assets/js": [
+        ".js",
+        ".js.map"
+      ],
+      "assets/css": [
+        ".css",
+        ".css.map"
+      ],
+      "assets/images": [
+        ".jpg",
+        ".png",
+        ".gif",
+        ".svg"
+      ],
+      "assets/fonts": [
+        ".woff2",
+        ".woff",
+        ".eot",
+        ".ttf"
+      ]
+    },
+    "options": {
+      "development": false
+    }
+  },
+  "externals": {
+    "/assets/static/**/*": false,
+    "/test.html": false,
+    "/index.html": false
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "src/assets/static",
+        "staticOutDir": "assets/static"
+      }
+    ]
+  },
+  "alias": {
+    "@": "./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@fortawesome/fontawesome-free": "^5.13.1",
+    "cssnano": "^4.1.10",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.0",
+    "jquery": "^3.5.1",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-at-alias": "^0.2.0",
+    "parcel-plugin-custom-dist-structure": "^1.1.13",
+    "parcel-plugin-html-externals": "^0.2.0",
+    "parcel-plugin-static-files-copy": "^2.4.3",
+    "posthtml": "^0.13.1",
+    "posthtml-expressions": "^1.4.4",
+    "posthtml-extend": "^0.3.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.9",
+    "swiper": "^6.0.0",
+    "video.js": "^7.8.3"
+  },
+  "dependencies": {
+    "global": "^4.4.0"
+  }
+}
